@@ -1,4 +1,4 @@
-name: repoman
+name: CI
 
 on:
   push:
@@ -7,11 +7,14 @@ on:
     branches: [master]
 
 jobs:
-  repoman:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Run gitleaks
+        uses: zricethezav/gitleaks-action@master
 
       - name: Run repoman
         uses: lucianposton/repoman-ebuild-qa-action@v1
