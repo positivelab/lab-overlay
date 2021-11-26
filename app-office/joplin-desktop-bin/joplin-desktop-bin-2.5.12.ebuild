@@ -8,7 +8,7 @@ DESCRIPTION="Joplin is an open source note-taking app"
 HOMEPAGE="https://joplinapp.org"
 SRC_URI="amd64? ( https://github.com/laurent22/joplin/releases/download/v${PV}/Joplin-${PV}.AppImage )"
 
-LICENSE="AGPL-3"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
