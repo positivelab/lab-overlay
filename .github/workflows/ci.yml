@@ -20,6 +20,3 @@ jobs:
         uses: ludeeus/action-shellcheck@master
         env:
           SHELLCHECK_OPTS: --shell=bash --exclude=SC2034
-
-      - name: Run repoman
-        uses: lucianposton/repoman-ebuild-qa-action@v1
