@@ -1,18 +1,19 @@
-diff -ru justinfrankel-WDL-d974e49/WDL/swell/Makefile justinfrankel-WDL-d974e49.new/WDL/swell/Makefile
---- justinfrankel-WDL-d974e49/WDL/swell/Makefile	2023-12-10 17:12:41.000000000 +0100
-+++ justinfrankel-WDL-d974e49.new/WDL/swell/Makefile	2023-12-12 19:42:19.161433462 +0100
-@@ -17,7 +17,7 @@
-
+diff --git a/WDL/swell/Makefile b/WDL/swell/Makefile
+index c0a52312..fb09826b 100644
+--- a/WDL/swell/Makefile
++++ b/WDL/swell/Makefile
+@@ -17,7 +17,7 @@ PKG_CONFIG = pkg-config
+ 
  COMPILER=GCC
-
--CFLAGS = -pipe -fvisibility=hidden -fno-math-errno -fPIC -DPIC -Wall -Wshadow -Wno-unused-function -Wno-multichar -Wtype-limits
-+CFLAGS += -fvisibility=hidden -fno-math-errno -fPIC -DPIC -Wall -Wshadow -Wno-unused-function -Wno-multichar -Wtype-limits
-
+ 
+-CFLAGS = -pipe -fvisibility=hidden -fno-math-errno -fPIC -DPIC -Wall -Wshadow -Wno-unused-function -Wno-multichar -Wtype-limits -Wno-unused-value -fstrict-aliasing
++CFLAGS += -fvisibility=hidden -fno-math-errno -fPIC -DPIC -Wall -Wshadow -Wno-unused-function -Wno-multichar -Wtype-limits -Wno-unused-value -fstrict-aliasing -Wno-error=array-bounds
+ 
  CFLAGS += -DSWELL_MAKING_DYLIB
-
-@@ -63,16 +63,9 @@
-
-
+ 
+@@ -72,16 +72,9 @@ endif
+ 
+ 
  ifdef DEBUG
 -CFLAGS += -O0 -g -D_DEBUG
 +CFLAGS += -D_DEBUG
@@ -27,5 +28,5 @@ diff -ru justinfrankel-WDL-d974e49/WDL/swell/Makefile justinfrankel-WDL-d974e49.
 -  endif
 +CFLAGS += -DNDEBUG
  endif
-
- LINKEXTRA =  -lpthread -ldl
+ 
+ LINKEXTRA =  -lpthread -ldl 
